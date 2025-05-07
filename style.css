@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(to top, #ffccff, #ffe6f0);
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    text-align: center;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 2rem;
+    color: #b30059;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .wish {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  button {
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff3385;
+  }
+  
+  .balloons::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.ib');
+    background-size: 150px;
+    background-repeat: repeat-x;
+    animation: floatBalloons 10s linear infinite;
+    opacity: 0.8;
+    z-index: 1;
+  }
+  
+  @keyframes floatBalloons {
+    0% {
+      background-position: 0 100vh;
+    }
+    100% {
+      background-position: 100vw 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #loveLetter {
+    background: rgba(255, 255, 255, 0.85);
+    color: #b30059;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    animation: fadeIn 2s ease-in-out;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  }
+  
+  .gallery {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 0 20px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+  }
+  
+  #fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+  
+  /* Handwriting font and signature styling */
+.signature {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 10px;
+    animation: fadeInSignature 3s ease-in-out;
+  }
+  
+  .author-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff80aa;
+  }
+  
+  .sign-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #cc0066;
+    white-space: nowrap;
+    animation: writeName 3s steps(15) forwards;
+    overflow: hidden;
+    width: 0;
+    border-right: 2px solid rgba(204, 0, 102, 0.5);
+  }
+  
+  @keyframes writeName {
+    from { width: 0; }
+    to { width: 160px; }
+  }
+  
+  @keyframes fadeInSignature {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery img {
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .letter p {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  
+    .sign-name {
+      font-size: 1.4rem;
+    }
+  
+    .author-pic {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .candle {
+      left: 10px;
+      bottom: 10px;
+      width: 15px;
+      height: 45px;
+    }
+  }
+  
