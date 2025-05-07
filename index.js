@@ -1,4 +1,4 @@
-/ Surprise Button Function
+// Surprise Button Function
 document.getElementById("surpriseBtn").addEventListener("click", () => {
     document.getElementById("loveLetter").classList.remove("hidden");
     startFireworks();
